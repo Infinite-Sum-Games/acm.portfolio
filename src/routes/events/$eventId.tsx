@@ -111,7 +111,7 @@ function EventDetailComponent() {
               className="text-foreground text-2xl md:text-3xl font-bold text-center mb-6"
               {...fadeUp}
             >
-              Sponsors
+              Our Sponsors
             </motion.h2>
 
             {(() => {

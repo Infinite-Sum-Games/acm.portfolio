@@ -28,7 +28,7 @@ export const slugify = (text: string): string => {
     //All these are just in 
 };
 
-// Each event is stored here with its name(slug) as the key
+// Each event slug is stored here with its name as the key
 export const eventDb: Record<string, Event> = {
 
  
@@ -38,7 +38,7 @@ export const eventDb: Record<string, Event> = {
     report:
       "The CS101 series of events ended with a bang that was the Hack101 event. Hack 101 was a 12-hour hackathon where participants flexed the skills they learnt in the workshops leading up to the event. The hackathon was completely open and participants built a wide variety of projects on a wide range of topics from 2D platformers to movie recommendation systems. The winners were awarded with cash prizes and certificates. ",
     mainImage: "/hack101.jpg",
-    gallery: ["temp.jpg", "temp.jpg", "temp.jpg", "temp.jpg"],
+      stats: [{ value: 80, prefix: "Upwards of ", suffix: " People Attended" }],
     tags: ["#Hack101", "#CS101", "#ACM", "#Amrita"],
   },
 
@@ -48,26 +48,28 @@ export const eventDb: Record<string, Event> = {
     report:
       "Langchain 101 was the second workshop in the CS101 series, with partcipants diving headfirst into incorporating LLMs into their applications. Participants built chatbots using Langchain and fine-tuned them to get accurate responses.Participants implemented concepts like Retrieval Augmented Generation (RAG), training LLMs to write blockchain code using provided documentation and agents & tool integration. Participants were tasked with building a chatbot interface using Streamlit and LangChain. This hands-on project allowed attendees to apply their newly acquired knowledge in a practical context, fostering innovation and creativity. Engagement & Feedback:",
     mainImage: "/langchain101/langchain101 2.jpg",
+    stats: [{ value: 70, prefix: "More Than ", suffix: " Atendees" }],
     gallery: ["/langchain101/langchain101 3.jpg", "/langchain101/langchain101 4.jpg"],
     tags: ["#Langchain101", "#CS101", "#ACM", "#Amrita", "#LLM", "#Chatbots"],
   },
 
-  "web-101": { //events/webdev-101 is the route
+  "web-101": { //events/web-101 is the route
     name: "Web 101", 
     details: "25th Feb 2025 | Seminar Hall-AB3",
     report:
       "Webdev 101 marked the start of the CS101 series of events for 2024-25. The workshop provided a holistic introduction to web development with a good mix of hands-on and theory. Pariticpants learnt the ins and outs of modern frontend development frameworks like React by building a todo app and a login page, complete with backend integration. There was a live coding session where the attendees were made to code a website, and the speakers were coding live along with the attendees. Doubts were discussed and cleared. At the end of the workshop, a Q/A session was also held.",
     mainImage: "/web101.jpeg",
+    stats: [{ value: 100, prefix: "Over ", suffix: " Students" }],
     tags: ["#Webdev101", "#CS101", "#ACM", "#Amrita"],
   },
 
   "winter-of-code-2024-25": { //events/winter-of-code-2024-25 is the route
     name: "Winter of Code 2024-25", 
-    details: "Dec 2024 | Online",
+    details: "17th Dec 2024 | Online",
     report:
       "The Winter of Code held at ACM Amrita!, this was an open-source coding challenge to the participants. Developers contributed to a range of exciting projects, collaborating, and pushed their skills to new heights. A gamified leaderboard system kept the competition fierce, with participants vying for top spots through consistent contributions and innovative solutions. The event not only fostered a spirit of community and learning but also highlighted the power of open-source collaboration in driving technological advancement.",
     mainImage: "/woc/woc.JPG",
-    stats: [{ value: 270, prefix: "A Turnout Of Over  ", suffix: " Students" }], 
+    stats: [{ value: 300, prefix: "A Turnout Of Over  ", suffix: " Students" }], 
     gallery: ["/woc/woc1.JPG", "/woc/woc2.JPG", "/woc/woc3.JPG", "/woc/woc4.JPG"],
     tags: ["#WinterOfCode", "#ACM", "#Amrita", "#OpenSource"],
   },
@@ -84,7 +86,7 @@ export const eventDb: Record<string, Event> = {
 
   "backend-development-workshop": { //events/backend-development-workshop is the route
     name: "Backend Development Workshop", 
-    details: " 24th and 25th Jul, 2024 | AB3",
+    details: "24th and 25th Jul, 2024 | AB3",
     report:
       "The ACM Student Club at Amrita Coimbatore kicked off technical workshops for the year 2024-25 with a workshop on backend development fundamentals. Participants were introduced to the concepts of backend development such as APIs and MVC models. The workshop was completely hands-on with participants building CRUD APIs using Express.js and Node.js and testing them using Postman.\n\nThe workshop attracted predominantly undergraduate students in their second and third years. The attendee profile included undergraduate students with basic programming knowledge seeking to enhance their backend development capabilities for academic projects and career preparation.",
     mainImage: "/backend workshop.jpg",
