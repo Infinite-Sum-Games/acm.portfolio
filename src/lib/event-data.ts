@@ -30,8 +30,6 @@ export const slugify = (text: string): string => {
 
 // Each event slug is stored here with its name as the key
 export const eventDb: Record<string, Event> = {
-
- 
   "hack-101": {  //events/hack-101 is the route
     name: "Hack 101", 
     details: "4th March 2025 | AB3",
@@ -128,15 +126,14 @@ export const eventDb: Record<string, Event> = {
   },
  
   "defang-io-hackathon": { //events/defang-io-hackathon is the route
-  name: "Defang.io Hackathon 2025",
-  details: "17th Sept, 2025 | Anugraha Hall-AB3",
-  report:
-    "The Defang.io Hackathon was officially launched as part of the ACM Bootstrap '25 activities, marking the beginning of a focused and technically engaging competition.The Defang.io Hackathon was officially launched as part of the ACM Bootstrap '25 activities, marking the beginning of a focused and technically engaging competition.These challenges covered a wide range of domains- AI-assisted systems, automation tools, web-based utilities, scalable cloud applications, performance-oriented solutions, and creative developer productivity tools",
-  mainImage: "/defang/defang.jpg", 
-  sponsors: ["/defang/sponsor.svg"],
-  stats: [{ value: 150, prefix: "Engaged Over ", suffix: " Participants" }],
-  gallery: ["/defang/defang 2.JPG", "/defang/defang 3.JPG", "/defang/defang 4.JPG", "/defang/defang 5.jpg"],
-  tags: ["#DefangHackathon", "#Hackathon", "#ACM", "#Tech", "#Innovation"]
-},
-
+    name: "Defang.io Hackathon 2025",
+    details: "17th Sept, 2025 | Anugraha Hall-AB3",
+    report:
+      "The Defang.io Hackathon was officially launched as part of the ACM Bootstrap '25 activities, marking the beginning of a focused and technically engaging competition.The Defang.io Hackathon was officially launched as part of the ACM Bootstrap '25 activities, marking the beginning of a focused and technically engaging competition.These challenges covered a wide range of domains- AI-assisted systems, automation tools, web-based utilities, scalable cloud applications, performance-oriented solutions, and creative developer productivity tools",
+    mainImage: "/defang/defang.jpg", 
+    sponsors: ["/defang/sponsor.svg"],
+    stats: [{ value: 150, prefix: "Engaged Over ", suffix: " Participants" }],
+    gallery: ["/defang/defang 2.JPG", "/defang/defang 3.JPG", "/defang/defang 4.JPG", "/defang/defang 5.jpg"],
+    tags: ["#DefangHackathon", "#Hackathon", "#ACM", "#Tech", "#Innovation"]
+  },
 };
