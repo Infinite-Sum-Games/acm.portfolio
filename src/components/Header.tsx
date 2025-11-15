@@ -1,67 +1,121 @@
 import { Link } from '@tanstack/react-router'
-
 import { useState } from 'react'
-import { Home, Menu, X } from 'lucide-react'
+import {
+	Home,
+	Menu,
+	X,
+	Users,
+	Calendar,
+} from 'lucide-react'
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+	const [isOpen, setIsOpen] = useState(false)
 
-  return (
-    <>
-      <header className="p-4 flex items-center bg-gray-800 text-white shadow-lg">
-        <button
-          onClick={() => setIsOpen(true)}
-          className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
-          aria-label="Open menu"
-        >
-          <Menu size={24} />
-        </button>
-        <h1 className="ml-4 text-xl font-semibold">
-          <Link to="/">
-            <img
-              src="/tanstack-word-logo-white.svg"
-              alt="TanStack Logo"
-              className="h-10"
-            />
-          </Link>
-        </h1>
-      </header>
+	const baseLinkClasses =
+		'transition-all duration-200 ease-in-out hover:scale-103'
 
-      <aside
-        className={`fixed top-0 left-0 h-full w-80 bg-gray-900 text-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
-      >
-        <div className="flex items-center justify-between p-4 border-b border-gray-700">
-          <h2 className="text-xl font-bold">Navigation</h2>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
-            aria-label="Close menu"
-          >
-            <X size={24} />
-          </button>
-        </div>
+	const inactiveLinkProps = {
+		className: `text-black hover:text-cyan-600 ${baseLinkClasses}`,
+	}
 
-        <nav className="flex-1 p-4 overflow-y-auto">
-          <Link
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
-          >
-            <Home size={20} />
-            <span className="font-medium">Home</span>
-          </Link>
+	const activeLinkProps = {
+		className: `text-cyan-600 font-semibold ${baseLinkClasses} hover:text-cyan-600`,
+	}
 
-          {/* Demo Links Start */}
+	return (
+		<>
+			<header className="sticky top-0 z-50 p-4 flex items-center justify-between bg-white text-black shadow-md">
+				<div className="flex items-center gap-4">
+					<Link to="/" className="flex items-center gap-3">
+						<img
+							src="/acm_logo.png"
+							alt="ACM Logo"
+							className="h-10"
+						/>
+						<img
+							src="/amrita_logo.svg"
+							alt="Amrita Logo"
+							className="h-8"
+						/>
+					</Link>
+				</div>
+				<nav className="hidden md:flex items-center gap-6 text-md font-medium text-black">
+					<Link
+						to="/"
+						activeProps={activeLinkProps}
+						inactiveProps={inactiveLinkProps}
+					>
+						Home
+					</Link>
+					<Link
+						to="/events"
+						activeProps={activeLinkProps}
+						inactiveProps={inactiveLinkProps}
+					>
+						Events
+					</Link>
+					<Link
+						to="/team"
+						activeProps={activeLinkProps}
+						inactiveProps={inactiveLinkProps}
+					>
+						Team
+					</Link>
+				</nav>
 
-          {/* Demo Links End */}
-        </nav>
-      </aside>
-    </>
-  )
+				<button
+					onClick={() => setIsOpen(!isOpen)}
+					className="p-2 hover:bg-gray-100 rounded-lg transition-colors md:hidden text-black"
+					aria-label="Toggle menu"
+				>
+					{isOpen ? <X size={24} /> : <Menu size={24} />}
+				</button>
+			</header>
+
+			<div
+				className={`md:hidden fixed top-[71px] left-0 w-full bg-white text-black transition-all duration-300 ease-in-out z-50 rounded-b-md ${
+					isOpen ? 'max-h-96' : 'max-h-0'
+				} overflow-hidden`}
+			>
+				<nav className="flex flex-col p-4 text-black">
+					<Link
+						to="/"
+						onClick={() => setIsOpen(false)}
+						className="flex items-center gap-3 py-3 rounded-lg text-black hover:bg-gray-100 transition-colors"
+						activeProps={{
+							className:
+								'flex items-center gap-3 py-3 rounded-lg bg-cyan-50 text-cyan-600 font-medium',
+						}}
+					>
+						<Home size={20} />
+						<span className="font-medium">Home</span>
+					</Link>
+					<Link
+						to="/events"
+						onClick={() => setIsOpen(false)}
+						className="flex items-center gap-3 py-3 rounded-lg text-black hover:bg-gray-100 transition-colors"
+						activeProps={{
+							className:
+								'flex items-center gap-3 py-3 rounded-lg bg-cyan-50 text-cyan-600 font-medium',
+						}}
+					>
+						<Calendar size={20} />
+						<span className="font-medium">Events</span>
+					</Link>
+					<Link
+						to="/team"
+						onClick={() => setIsOpen(false)}
+						className="flex items-center gap-3 py-3 rounded-lg text-black hover:bg-gray-100 transition-colors"
+						activeProps={{
+							className:
+								'flex items-center gap-3 py-3 rounded-lg bg-cyan-50 text-cyan-600 font-medium',
+						}}
+					>
+						<Users size={20} />
+						<span className="font-medium">Team</span>
+					</Link>
+				</nav>
+			</div>
+		</>
+	)
 }
