@@ -4,10 +4,6 @@ import { EventCard } from '@/components/EventCard'
 
 import { eventDb } from '@/lib/event-data'
 
-import  Header  from '@/components/Header'
-
-import  Footer  from '@/components/Footer'
-
 export const Route = createFileRoute('/events/')({
   component: RouteComponent,
 })
@@ -18,7 +14,6 @@ function RouteComponent() {
 
   return (
     <div className="bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white min-h-screen font-sans">
-      <Header />
       <div className="container p-4 mx-auto md:p-8">
         <section className="pt-2 pb-10 text-center md:pt-4 md:pb-14">
           <h1 className="text-3xl font-extrabold tracking-wide md:text-3xl text-zinc-700 dark:text-zinc-300">
@@ -35,7 +30,6 @@ function RouteComponent() {
         </section>
 
       </div>
-      <Footer />
     </div>
   )
 }
