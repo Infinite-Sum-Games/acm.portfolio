@@ -102,9 +102,13 @@ function EventDetailComponent() {
 
         {/* Sponsors */}
         {event.sponsors && event.sponsors.length > 0 && (
+          <hr className="w-full border-t border-border my-8" />
+        )}
+
+        {event.sponsors && event.sponsors.length > 0 && (
           <motion.div {...fadeUp} className="mb-12">
             <motion.h2
-              className="text-white text-2xl md:text-3xl font-bold text-center mb-6"
+              className="text-foreground text-2xl md:text-3xl font-bold text-center mb-6"
               {...fadeUp}
             >
               Sponsors
@@ -114,7 +118,7 @@ function EventDetailComponent() {
               const sponsors = event.sponsors;
               const numSponsors = sponsors.length;
               const imgClasses =
-                "w-full h-48 object-contain rounded-lg shadow-md transition-transform duration-300 hover:scale-105 p-4 border border-border";
+                "w-full h-35 object-contain rounded-lg  transition-transform duration-300  p-4 ";
 
               if (numSponsors === 1)
                 return (
@@ -146,7 +150,7 @@ function EventDetailComponent() {
                     <div className="sm:col-span-2 flex justify-center">
                       <motion.img
                         src={sponsors[2]}
-                        className="w-full sm:w-1/2 object-contain rounded-lg shadow-md p-4 border border-border"
+                        className="w-full sm:w-1/2 object-contain rounded-lg p-4 border border-border"
                         {...fadeUp}
                       />
                     </div>
@@ -186,12 +190,12 @@ function EventDetailComponent() {
               const photos = event.gallery;
               const numPhotos = photos.length;
               const imgClasses =
-                "w-full h-40 md:h-80 object-cover rounded-lg transition-transform duration-300 hover:scale-102 p-2";
+                "w-full h-40 md:h-80 object-cover rounded-lg transition-transform duration-300 hover:scale-101 p-2";
 
               if (numPhotos === 1)
                 return (
                   <motion.div {...fadeUp} className="flex justify-center">
-                    <motion.img src={photos[0]} className={imgClasses} {...fadeUp} />
+                    <motion.img src={photos[0]} className="w-full h-40 md:h-100 object-cover rounded-lg transition-transform duration-300 hover:scale-101 p-2" {...fadeUp} />
                   </motion.div>
                 );
 
@@ -218,7 +222,7 @@ function EventDetailComponent() {
                     <div className="sm:col-span-2 flex justify-center">
                       <motion.img
                         src={photos[2]}
-                        className="w-full sm:w-1/2 object-cover rounded-lg p-2"
+                        className="w-full sm:w-1/2 object-cover transition-transform duration-300 hover:scale-101 rounded-lg p-2"
                         {...fadeUp}
                       />
                     </div>
