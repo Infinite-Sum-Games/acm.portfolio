@@ -34,6 +34,8 @@ function EventDetailComponent() {
           <motion.img
             src={event.mainImage}
             alt={event.name}
+            loading="eager"
+            decoding="async"
             className="w-full h-[300px] md:h-[550px] object-cover rounded-xl shadow-lg"
             {...fadeUp}
           />
@@ -129,6 +131,8 @@ function EventDetailComponent() {
                   <motion.div {...fadeUp} className="max-w-2xl mx-auto">
                     <motion.img
                       src={sponsors[0]}
+                      loading="lazy"
+                      decoding="async"
                       className={imgClasses}
                       {...fadeUp}
                     />
@@ -145,6 +149,8 @@ function EventDetailComponent() {
                       <motion.img
                         key={i}
                         src={s}
+                        loading="lazy"
+                        decoding="async"
                         className={imgClasses}
                         {...fadeUp}
                       />
@@ -160,17 +166,23 @@ function EventDetailComponent() {
                   >
                     <motion.img
                       src={sponsors[0]}
+                      loading="lazy"
+                      decoding="async"
                       className={imgClasses}
                       {...fadeUp}
                     />
                     <motion.img
                       src={sponsors[1]}
+                      loading="lazy"
+                      decoding="async"
                       className={imgClasses}
                       {...fadeUp}
                     />
                     <div className="sm:col-span-2 flex justify-center">
                       <motion.img
                         src={sponsors[2]}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full sm:w-1/2 object-contain rounded-lg p-4 border border-border"
                         {...fadeUp}
                       />
@@ -188,6 +200,8 @@ function EventDetailComponent() {
                       <motion.img
                         key={i}
                         src={s}
+                        loading="lazy"
+                        decoding="async"
                         className={imgClasses}
                         {...fadeUp}
                       />
@@ -223,6 +237,8 @@ function EventDetailComponent() {
                   <motion.div {...fadeUp} className="flex justify-center">
                     <motion.img
                       src={photos[0]}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-40 md:h-100 object-cover rounded-lg transition-transform duration-300 hover:scale-101 p-2"
                       {...fadeUp}
                     />
@@ -239,6 +255,8 @@ function EventDetailComponent() {
                       <motion.img
                         key={i}
                         src={p}
+                        loading="lazy"
+                        decoding="async"
                         className={imgClasses}
                         {...fadeUp}
                       />
@@ -254,17 +272,23 @@ function EventDetailComponent() {
                   >
                     <motion.img
                       src={photos[0]}
+                      loading="lazy"
+                      decoding="async"
                       className={imgClasses}
                       {...fadeUp}
                     />
                     <motion.img
                       src={photos[1]}
+                      loading="lazy"
+                      decoding="async"
                       className={imgClasses}
                       {...fadeUp}
                     />
                     <div className="sm:col-span-2 flex justify-center">
                       <motion.img
                         src={photos[2]}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full sm:w-1/2 object-cover transition-transform duration-300 hover:scale-101 rounded-lg p-2"
                         {...fadeUp}
                       />
@@ -282,6 +306,8 @@ function EventDetailComponent() {
                       <motion.img
                         key={i}
                         src={p}
+                        loading="lazy"
+                        decoding="async"
                         className={imgClasses}
                         {...fadeUp}
                       />
